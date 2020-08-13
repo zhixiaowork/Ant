@@ -48,13 +48,15 @@ export default defineConfig({
           routes: [
             {
               path: '/',
-              redirect: '/welcome',
+              hideInMenu: true,
+              hideInBreadcrumb: true,
+              component: './Home/HomePage',
             },
             {
-              path: '/welcome',
-              name: 'welcome',
-              icon: 'smile',
-              component: './Welcome',
+              path: '/home',
+              name: 'dashboard',
+              icon: 'dashboard',
+              component: './Home/HomePage',
             },
             {
               path: '/admin',
