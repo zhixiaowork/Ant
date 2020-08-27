@@ -1,12 +1,10 @@
-import { AlipayCircleOutlined, TaobaoCircleOutlined, WeiboCircleOutlined } from '@ant-design/icons';
 import { Alert, Checkbox } from 'antd';
 import React, { useState } from 'react';
-import { Link, connect, Dispatch } from 'umi';
+import { connect, Dispatch } from 'umi';
 import { StateType } from '@/models/login';
 import { LoginParams } from '@/services/login';
 import { ConnectState } from '@/models/connect';
 import LoginForm from './components/Login';
-
 import styles from './style.less';
 
 const { UserName, Password, Submit } = LoginForm;
@@ -47,7 +45,7 @@ const Login: React.FC<LoginProps> = (props) => {
         {status === 'error' && !submitting && <LoginMessage content="账户或密码错误" />}
         <UserName
           name="userName"
-          placeholder="用户名: admin or user"
+          placeholder="用户名"
           rules={[
             {
               required: true,
@@ -57,7 +55,7 @@ const Login: React.FC<LoginProps> = (props) => {
         />
         <Password
           name="password"
-          placeholder="密码: ant.design"
+          placeholder="密码"
           rules={[
             {
               required: true,
@@ -72,15 +70,6 @@ const Login: React.FC<LoginProps> = (props) => {
           <a style={{ float: 'right' }}>忘记密码</a>
         </div>
         <Submit loading={submitting}>登录</Submit>
-        <div className={styles.other}>
-          其他登录方式
-          <AlipayCircleOutlined className={styles.icon} />
-          <TaobaoCircleOutlined className={styles.icon} />
-          <WeiboCircleOutlined className={styles.icon} />
-          <Link className={styles.register} to="/user/register">
-            注册账户
-          </Link>
-        </div>
       </LoginForm>
     </div>
   );

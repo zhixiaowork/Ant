@@ -48,36 +48,101 @@ export default defineConfig({
           routes: [
             {
               path: '/',
-              hideInMenu: true,
-              hideInBreadcrumb: true,
-              component: './Home/HomePage',
-            },
-            {
-              path: '/home',
               name: 'dashboard',
               icon: 'dashboard',
-              component: './Home/HomePage',
+              component: './Home/IndexPage',
             },
             {
-              path: '/admin',
-              name: 'admin',
+              path: '/userManage',
+              name: 'user.manage',
               icon: 'crown',
-              component: './Admin',
+              component: './userManage/Indexpage',
               authority: ['admin'],
               routes: [
                 {
                   path: '/admin/sub-page',
                   name: 'sub-page',
                   icon: 'smile',
-                  component: './Welcome',
+                  component: './userManage/Welcome',
                   authority: ['admin'],
                 },
               ],
             },
             {
+              path: '/adminManage',
+              name: 'admin.manage',
+              icon: 'crown',
+              component: './adminManage/Indexpage',
+              authority: ['admin'],
+              routes: [
+                {
+                  path: '/admin/sub-page',
+                  name: 'sub-page',
+                  icon: 'smile',
+                  component: './adminManage/Welcome',
+                  authority: ['admin'],
+                },
+              ],
+            },
+            {
+              path: '/roleManage',
+              name: 'role.manage',
+              icon: 'crown',
+              component: './roleManage/Indexpage',
+              authority: ['admin'],
+              routes: [
+                {
+                  path: '/role/sub-page',
+                  name: 'sub-page',
+                  icon: 'smile',
+                  component: './roleManage/Welcome',
+                  authority: ['admin'],
+                },
+              ],
+            },
+            {
+              path: '/picturesManage',
+              name: 'pictures.manage',
+              icon: 'crown',
+              component: './picturesManage/Indexpage',
+              authority: ['admin'],
+              routes: [
+                {
+                  path: '/picture/sub-page',
+                  name: 'sub-page',
+                  icon: 'smile',
+                  component: './picturesManage/Welcome',
+                  authority: ['admin'],
+                },
+              ],
+            },
+            {
+              path: '/logsManage',
+              name: 'logs.manage',
+              icon: 'crown',
+              component: './logsManage/Indexpage',
+              authority: ['admin'],
+              routes: [
+                {
+                  path: '/log/sub-page',
+                  name: 'sub-page',
+                  icon: 'smile',
+                  component: './logsManage/Welcome',
+                  authority: ['admin'],
+                },
+              ],
+            },
+            {
+              name: 'wechat.config',
+              icon: 'table',
+              path: '/wechatConfig',
+              component: './wechatConfigPage',
+            },
+            {
               name: 'list.table-list',
               icon: 'table',
               path: '/list',
+              hideInMenu: true,
               component: './ListTableList',
             },
             {
